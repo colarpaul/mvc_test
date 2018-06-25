@@ -135,11 +135,11 @@ class Model
     }
 }
 ```
-<?php
 ================
 [index.PHP]
 ================
 ```
+<?php
 // Include Controller
 include_once('Controller.php');
 $controller = new Controller();
@@ -152,6 +152,7 @@ if (isset($_GET['name']) && !empty($_GET['name'])) {
 // Render View template
 $controller->getAuthors(
 ```
+
 ================
 [View.PHP]
 ================
