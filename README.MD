@@ -39,8 +39,8 @@ Author: <?php echo $author ?>
 ================
 [Controller.PHP]
 ================
+```
 <?php
-
 include_once('Model.php');
 
 class controller
@@ -75,12 +75,12 @@ class controller
     	return $this->model->addAuthor($name);
     }
 }
-
+```
 ================
 [Model.PHP]
 ================
+```
 <?php
-
 class Model
 {
     public $dbConnection;
@@ -134,9 +134,28 @@ class Model
         }
     }
 }
+```
+<?php
+================
+[index.PHP]
+================
+```
+// Include Controller
+include_once('Controller.php');
+$controller = new Controller();
+
+// If add-form is called add a new author to DB
+if (isset($_GET['name']) && !empty($_GET['name'])) {
+    $controller->addAuthor($_GET['name']);
+}
+
+// Render View template
+$controller->getAuthors(
+```
 ================
 [View.PHP]
 ================
+```
 <html>
 <head>
     <title>MVC App</title>
@@ -162,24 +181,7 @@ class Model
     </table>
 </body>
 <footer></footer>
-</html>
-
-================
-[index.PHP]
-================
-<?php 
-
-// Include Controller
-include_once('Controller.php');
-$controller = new Controller();
-
-// If add-form is called add a new author to DB
-if (isset($_GET['name']) && !empty($_GET['name'])) {
-    $controller->addAuthor($_GET['name']);
-}
-
-// Render View template
-$controller->getAuthors();
-
+</html>);
+```
 
 
