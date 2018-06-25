@@ -36,9 +36,7 @@ Author: <?php echo $author ?>
 <?php endforeach ?>
 
 
-================
 [Controller.PHP]
-================
 ```
 <?php
 include_once('Model.php');
@@ -76,9 +74,8 @@ class controller
     }
 }
 ```
-================
+
 [Model.PHP]
-================
 ```
 <?php
 class Model
@@ -135,9 +132,8 @@ class Model
     }
 }
 ```
-================
+
 [index.PHP]
-================
 ```
 <?php
 // Include Controller
@@ -153,9 +149,7 @@ if (isset($_GET['name']) && !empty($_GET['name'])) {
 $controller->getAuthors(
 ```
 
-================
 [View.PHP]
-================
 ```
 <html>
 <head>
